@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Conference Room A",
+    "location": "2nd Floor, Building 1",
+    "capacity": "10 people",
+    "available_amenities": ["Wi-Fi", "Projector"]
+  },
+  {
+    "name": "Meeting Room B",
+    "location": "1st Floor, Building 2",
+    "capacity": "6 people",
+    "available_amenities": ["Wi-Fi", "Projector"]
+  },
+  {
+    "name": "Training Room C",
+    "location": "Ground Floor, Building 3",
+    "capacity": "20 people",
+    "available_amenities": ["Wi-Fi", "Projector"]
+  },
+  {
+    "name": "Executive Suite D",
+    "location": "3rd Floor, Building 4",
+    "capacity": "4 people",
+    "available_amenities": ["Wi-Fi", "Projector"]
+  },
+  {
+    "name": "Outdoor Pavilion E",
+    "location": "Garden Area, Building 5",
+    "capacity": "30 people",
+    "available_amenities": ["Wi-Fi", "Projector"]
+  }
+]
