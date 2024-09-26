@@ -1,31 +1,31 @@
 [
   {
     "name": "Conference Room A",
-    "location": "2nd Floor, Building 1",
+    "location": "Downtown Cairo, Egypt",
     "capacity": "10 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
     "name": "Meeting Room B",
-    "location": "1st Floor, Building 2",
+    "location": "Zamalek, Cairo, Egypt",
     "capacity": "6 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
     "name": "Training Room C",
-    "location": "Ground Floor, Building 3",
+    "location": "Maadi, Cairo, Egypt",
     "capacity": "20 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
     "name": "Executive Suite D",
-    "location": "3rd Floor, Building 4",
+    "location": "Heliopolis, Cairo, Egypt",
     "capacity": "4 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
     "name": "Outdoor Pavilion E",
-    "location": "Garden Area, Building 5",
+    "location": "Giza Pyramids Area, Egypt",
     "capacity": "30 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   }
