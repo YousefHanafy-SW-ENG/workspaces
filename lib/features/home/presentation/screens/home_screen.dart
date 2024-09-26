@@ -4,7 +4,7 @@ import 'package:workspace/core/helpers/extensions.dart';
 import 'package:workspace/core/helpers/spacer.dart';
 import 'package:workspace/core/widgets/primary_app_bar.dart';
 import 'package:workspace/core/widgets/primary_padding.dart';
-import 'package:workspace/features/home/presentation/widgets/workspace_item.dart';
+import 'package:workspace/features/home/presentation/widgets/workspaces_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,17 +17,11 @@ class HomeScreen extends StatelessWidget {
         child: const PrimaryAppBar(title: AppStrings.workspaces),
       ),
       body: PrimaryPadding(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              verticalSpace(24),
-              const WorkSpaceItem(),
-              const WorkSpaceItem(),
-              const WorkSpaceItem(),
-              const WorkSpaceItem(),
-            ],
-          ),
+        child: Column(
+          children: [
+            verticalSpace(24),
+            const WorkspacesList()
+          ],
         ),
       ),
     );

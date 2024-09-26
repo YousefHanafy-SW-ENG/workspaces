@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:workspace/core/helpers/app_images.dart';
-import 'package:workspace/core/helpers/app_strings.dart';
 import 'package:workspace/core/helpers/spacer.dart';
 import 'package:workspace/core/theming/app_colors.dart';
 import 'package:workspace/features/home/presentation/widgets/icon_text_grey_container.dart';
@@ -10,7 +9,19 @@ import 'package:workspace/features/home/presentation/widgets/work_space_image.da
 import 'package:workspace/features/home/presentation/widgets/workspace_name.dart';
 
 class WorkSpaceItem extends StatelessWidget {
-  const WorkSpaceItem({super.key});
+  final String workspaceName;
+  final String capacity;
+  final String location;
+  final String firstAmenity;
+  final String secondAmenity;
+  const WorkSpaceItem({
+    super.key,
+    required this.workspaceName,
+    required this.capacity,
+    required this.location,
+    required this.firstAmenity,
+    required this.secondAmenity
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,18 +40,22 @@ class WorkSpaceItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const WorkSpaceImage(image: AppAssets.workspaceImageOne,),
-              const WorkSpaceName(name: AppStrings.workspaceOne),
-              const Row(
-                children: [
-                  IconTextRow(text:AppStrings.cairo,icon: AppAssets.locationIcon,),
-                  IconTextRow(text:AppStrings.fourPeople,icon: AppAssets.userIcon,),
-                ],
+              WorkSpaceName(name: workspaceName),
+              Padding(
+                padding: EdgeInsets.only(right: 5.w),
+                child: Row(
+                  children: [
+                    IconTextRow(text:location,icon: AppAssets.locationIcon,),
+                    const Spacer(),
+                    IconTextRow(text:capacity,icon: AppAssets.userIcon,),
+                  ],
+                ),
               ),
               verticalSpace(16.h),
-              const Row(
+              Row(
                 children: [
-                  IconTextGreyContainer(icon: AppAssets.wifiIcon,text: AppStrings.freeWifi,),
-                  IconTextGreyContainer(icon: AppAssets.projectorIcon,text: AppStrings.projector,),
+                  IconTextGreyContainer(icon: AppAssets.wifiIcon,text: firstAmenity,),
+                  IconTextGreyContainer(icon: AppAssets.projectorIcon,text: secondAmenity,),
                 ],
               ),
             ],

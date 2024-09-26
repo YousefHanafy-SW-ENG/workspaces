@@ -39,6 +39,7 @@ dependencies:
   flutter_svg:
   flutter_screenutil: ^5.9.3
   device_preview: ^1.1.0
+  get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/fonts/
+    - assets/data/
 
 
     # An image asset can refer to one or more resolution-specific "variants", see
