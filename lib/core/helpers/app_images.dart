@@ -4,6 +4,7 @@ class AppAssets {
   static const String imagesPath = "assets/images";
   static const String svgPath = "assets/svg";
   static const String workspaceImageOne = "$imagesPath/workspace_image_one.png";
+  static const String workspaceImageTwo = "$imagesPath/workspace_image_two.jpg";
   static const String cpuIcon = "$imagesPath/cpuIcon.png";
   static const String hardDiskIcon = "$imagesPath/hardIcon.png";
   static const String locationIcon = "$svgPath/location.svg";

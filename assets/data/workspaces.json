@@ -1,30 +1,30 @@
 [
   {
-    "name": "Conference Room A",
+    "name": "Innovative Hub",
     "location": "Downtown Cairo, Egypt",
     "capacity": "10 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
-    "name": "Meeting Room B",
+    "name": "Collaboration Space",
     "location": "Zamalek, Cairo, Egypt",
     "capacity": "6 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
-    "name": "Training Room C",
+    "name": "Creative Studio",
     "location": "Maadi, Cairo, Egypt",
     "capacity": "20 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
-    "name": "Executive Suite D",
+    "name": "Executive Office",
     "location": "Heliopolis, Cairo, Egypt",
     "capacity": "4 people",
     "available_amenities": ["Wi-Fi", "Projector"]
   },
   {
-    "name": "Outdoor Pavilion E",
+    "name": "Outdoor Retreat",
     "location": "Giza Pyramids Area, Egypt",
     "capacity": "30 people",
     "available_amenities": ["Wi-Fi", "Projector"]

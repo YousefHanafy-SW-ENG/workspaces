@@ -7,4 +7,9 @@ class AppStrings {
   static const String fourPeople = '4 People';
   static const String freeWifi = 'Free Wifi';
   static const String projector = 'Projector';
+  static const String about = 'About';
+  static const String amenities = 'Amenities';
+  static const String gallery = 'Gallery';
+  static const String review = 'Review';
+  static const String workspaceDescription = 'Modern workspaces are designed to enhance productivity and collaboration among team members.';
 }
