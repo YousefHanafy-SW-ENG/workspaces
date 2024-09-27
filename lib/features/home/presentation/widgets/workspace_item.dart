@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:workspace/core/helpers/app_images.dart';
-import 'package:workspace/core/helpers/extensions.dart';
 import 'package:workspace/core/helpers/spacer.dart';
-import 'package:workspace/core/routing/routes.dart';
 import 'package:workspace/core/theming/app_colors.dart';
 import 'package:workspace/features/home/presentation/widgets/icon_text_grey_container.dart';
 import 'package:workspace/features/home/presentation/widgets/icon_text_row.dart';
@@ -16,13 +14,15 @@ class WorkSpaceItem extends StatelessWidget {
   final String location;
   final String firstAmenity;
   final String secondAmenity;
+  final Function() onTap;
   const WorkSpaceItem({
     super.key,
     required this.workspaceName,
     required this.capacity,
     required this.location,
     required this.firstAmenity,
-    required this.secondAmenity
+    required this.secondAmenity,
+    required this.onTap
   });
 
   @override
@@ -30,9 +30,7 @@ class WorkSpaceItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 16.h),
       child: GestureDetector(
-        onTap: (){
-          context.pushNamed(Routes.workspaceDetailsScreen);
-        },
+        onTap: ()=>onTap(),
         behavior: HitTestBehavior.opaque,
         child: Container(
           width: double.infinity,

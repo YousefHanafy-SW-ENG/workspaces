@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:workspace/core/routing/routes.dart';
 import 'package:workspace/core/theming/styles.dart';
 import 'package:workspace/features/home/presentation/cubit/home_cubit.dart';
 import 'package:workspace/features/home/presentation/cubit/home_states.dart';
@@ -29,7 +30,8 @@ class WorkspacesList extends StatelessWidget {
                 capacity: workspace.capacity,
                 location: workspace.location,
                 firstAmenity: workspace.availableAmenities[0],
-                secondAmenity: workspace.availableAmenities[1]
+                secondAmenity: workspace.availableAmenities[1],
+                onTap: ()=>Navigator.of(context).pushNamed(Routes.workspaceDetailsScreen),
             );
           },
         ),

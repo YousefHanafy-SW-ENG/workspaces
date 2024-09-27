@@ -11,5 +11,8 @@ class AppStrings {
   static const String amenities = 'Amenities';
   static const String gallery = 'Gallery';
   static const String review = 'Review';
+  static const String description = 'Description :';
+  static const String location = 'Location :';
+  static const String capacity = 'Capacity :';
   static const String workspaceDescription = 'Modern workspaces are designed to enhance productivity and collaboration among team members.';
 }

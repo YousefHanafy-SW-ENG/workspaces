@@ -4,7 +4,6 @@ import 'package:workspace/core/helpers/app_strings.dart';
 import 'package:workspace/core/helpers/extensions.dart';
 import 'package:workspace/core/theming/app_colors.dart';
 import 'package:workspace/core/theming/styles.dart';
-import 'package:workspace/core/widgets/primary_padding.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/about_content.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/amenities_content.dart';
 
@@ -15,51 +14,33 @@ class WorkspaceTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 12.h),
-      child: PrimaryPadding(
-        child: DefaultTabController(
-          length: 2,
-          child: Column(
-            children: [
-              TabBar(
-                tabs: const [
-                  Tab(text: AppStrings.about),
-                  Tab(text: AppStrings.amenities),
+      child: DefaultTabController(
+        length: 2,
+        child: Column(
+          children: [
+            TabBar(
+              tabs: const [
+                Tab(text: AppStrings.about),
+                Tab(text: AppStrings.amenities),
+              ],
+              labelStyle: TextStyles.font14BlackSemiBold,
+              labelColor: AppColors.blueColor,
+              unselectedLabelColor: Colors.black,
+              indicatorColor: AppColors.blueColor,
+              indicatorWeight: 2,
+              indicatorPadding: EdgeInsets.symmetric(horizontal: 40.w),
+            ),
+            SizedBox(
+              height: context.height/2.8,
+              child: const TabBarView(
+                children: [
+                  AboutContent(),
+                  AmenitiesContent(),
                 ],
-                labelStyle: TextStyles.font14BlackSemiBold,
-                labelColor: AppColors.blueColor,
-                unselectedLabelColor: Colors.black,
-                indicatorColor: AppColors.blueColor,
-                indicatorWeight: 2,
-                indicatorPadding: EdgeInsets.symmetric(horizontal: 20.w),
               ),
-              SizedBox(
-                height: context.height/2.8,
-                child: const TabBarView(
-                  children: [
-                    AboutContent(),
-                    AmenitiesContent(),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ),
-    );
-  }
-}
-
-class TabContent extends StatelessWidget {
-  final String text;
-
-  const TabContent({required this.text, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 24),
       ),
     );
   }
