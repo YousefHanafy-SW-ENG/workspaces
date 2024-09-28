@@ -7,7 +7,8 @@ import 'package:workspace/core/widgets/primary_padding.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/description_text.dart';
 
 class WorkspaceNameAndDescription extends StatelessWidget {
-  const WorkspaceNameAndDescription({super.key});
+  final String name;
+  const WorkspaceNameAndDescription({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class WorkspaceNameAndDescription extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(16.h),
-          Text('AlMaqarr Coworking Space',style: TextStyles.font18BlackSemiBold,),
+          Text(name,style: TextStyles.font18BlackSemiBold,),
           verticalSpace(12.h),
           const DescriptionText(text: AppStrings.workspaceDescription,),
           verticalSpace(12.h),
