@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workspace/core/helpers/app_strings.dart';
+import 'package:workspace/core/helpers/extensions.dart';
+import 'package:workspace/core/routing/routes.dart';
 import 'package:workspace/core/widgets/button_bottom_nav_bar.dart';
 import 'package:workspace/core/widgets/primary_button.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/custom_back_arrow.dart';
@@ -46,7 +48,7 @@ class WorkspaceDetailsScreen extends StatelessWidget {
       bottomNavigationBar: ButtonBottomNavBar(
         button: PrimaryButton(
           text: AppStrings.bookNow,
-          onTap: (){},
+          onTap: ()=>context.pushNamed(Routes.bookingScreen),
         ),
       ),
     );
