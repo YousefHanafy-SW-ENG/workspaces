@@ -8,12 +8,22 @@ import 'package:workspace/features/workspace_details/presentation/widgets/about_
 import 'package:workspace/features/workspace_details/presentation/widgets/amenities_content.dart';
 
 class WorkspaceTabs extends StatelessWidget {
-  const WorkspaceTabs({super.key});
+  final String location;
+  final String capacity;
+  final String firstAmenity;
+  final String secondAmenity;
+  const WorkspaceTabs({
+    super.key,
+    required this.location,
+    required this.capacity,
+    required this.firstAmenity,
+    required this.secondAmenity
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 12.h),
+      padding: EdgeInsets.only(top: 12.h,bottom: 60.h),
       child: DefaultTabController(
         length: 2,
         child: Column(
@@ -31,11 +41,17 @@ class WorkspaceTabs extends StatelessWidget {
               indicatorPadding: EdgeInsets.symmetric(horizontal: 40.w),
             ),
             SizedBox(
-              height: context.height/2.8,
-              child: const TabBarView(
+              height: context.height/2.1,
+              child: TabBarView(
                 children: [
-                  AboutContent(),
-                  AmenitiesContent(),
+                  AboutContent(
+                    location: location,
+                    capacity: capacity,
+                  ),
+                  AmenitiesContent(
+                    firstAmenity: firstAmenity,
+                    secondAmenity: secondAmenity,
+                  ),
                 ],
               ),
             ),

@@ -4,7 +4,7 @@ import 'package:workspace/core/helpers/app_images.dart';
 import 'package:workspace/core/helpers/spacer.dart';
 import 'package:workspace/core/theming/app_colors.dart';
 import 'package:workspace/features/home/presentation/widgets/icon_text_grey_container.dart';
-import 'package:workspace/features/home/presentation/widgets/icon_text_row.dart';
+import 'package:workspace/core/widgets/icon_text_row.dart';
 import 'package:workspace/features/home/presentation/widgets/work_space_image.dart';
 import 'package:workspace/features/home/presentation/widgets/workspace_name.dart';
 

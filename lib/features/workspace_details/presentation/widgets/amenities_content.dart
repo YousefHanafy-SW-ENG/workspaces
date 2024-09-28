@@ -6,7 +6,9 @@ import 'package:workspace/core/theming/app_colors.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/detail_container.dart';
 
 class AmenitiesContent extends StatelessWidget {
-  const AmenitiesContent({super.key});
+  final String firstAmenity;
+  final String secondAmenity;
+  const AmenitiesContent({super.key, required this.firstAmenity, required this.secondAmenity});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +18,14 @@ class AmenitiesContent extends StatelessWidget {
           top: BorderSide(color: AppColors.borderColor, width: 1.w),
         ),
       ),
-      child: const Column(
-        children: [
-          DetailContainer(title: AppStrings.freeWifi,description: AppStrings.workspaceDescription,icon: AppAssets.wifiIcon,),
-          DetailContainer(title: AppStrings.projector,description: AppStrings.workspaceDescription,icon: AppAssets.projectorIcon,),
-        ],
+      child: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            DetailContainer(title: firstAmenity,description: AppStrings.freeWifiDescription,icon: AppAssets.wifiIcon,),
+            DetailContainer(title: secondAmenity,description: AppStrings.projectorDescription,icon: AppAssets.projectorIcon,),
+          ],
+        ),
       ),
     );
   }
