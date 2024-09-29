@@ -4,6 +4,7 @@ import 'package:workspace/core/helpers/extensions.dart';
 import 'package:workspace/core/routing/routes.dart';
 import 'package:workspace/core/widgets/button_bottom_nav_bar.dart';
 import 'package:workspace/core/widgets/primary_button.dart';
+import 'package:workspace/features/booking/presentation/widgets/booking_arguments.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/custom_back_arrow.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/workspace_details_photo.dart';
 import 'package:workspace/features/workspace_details/presentation/widgets/workspace_name_description.dart';
@@ -48,7 +49,15 @@ class WorkspaceDetailsScreen extends StatelessWidget {
       bottomNavigationBar: ButtonBottomNavBar(
         button: PrimaryButton(
           text: AppStrings.bookNow,
-          onTap: ()=>context.pushNamed(Routes.bookingScreen),
+          onTap: ()=>context.pushNamed(
+            Routes.bookingScreen,
+            arguments: BookingArguments(
+              name: name,
+              location:location,
+              capacity: capacity,
+              availableAmenities:availableAmenities,
+            ),
+          ),
         ),
       ),
     );
