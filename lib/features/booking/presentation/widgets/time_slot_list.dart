@@ -7,12 +7,14 @@ class TimeSlotsList extends StatefulWidget {
   final List<String> timeSlots;
   final String time;
   final ValueChanged<String> onTimeSelected;
+  final ValueChanged<int> onIndexSelected;
 
   const TimeSlotsList({
     super.key,
     required this.timeSlots,
     required this.time,
     required this.onTimeSelected,
+    required this.onIndexSelected,
   });
 
   @override
@@ -37,6 +39,7 @@ class TimeSlotsListState extends State<TimeSlotsList> {
                 selectedIndex = index;
               });
               widget.onTimeSelected(widget.timeSlots[index]);
+              widget.onIndexSelected(index);
             },
             child: Container(
               width: 115.w,

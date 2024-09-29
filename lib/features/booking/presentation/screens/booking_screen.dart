@@ -9,6 +9,7 @@ import 'package:workspace/core/widgets/primary_padding.dart';
 import 'package:workspace/features/booking/presentation/cubit/booking_cubit.dart';
 import 'package:workspace/features/booking/presentation/widgets/booking_calendar.dart';
 import 'package:workspace/features/booking/presentation/widgets/check_in_time_slots.dart';
+import 'package:workspace/features/booking/presentation/widgets/checkout_time_slots.dart';
 import 'package:workspace/features/booking/presentation/widgets/confirm_booking_button.dart';
 import 'package:workspace/features/booking/presentation/widgets/time_picker.dart';
 
@@ -49,13 +50,19 @@ class BookingScreen extends StatelessWidget {
                 onTimeSelected: (time) {
                   context.read<BookingCubit>().updateCheckInTime(time);
                 },
+                onIndexSelected: (index){
+                  context.read<BookingCubit>().updateCheckInIndex(index);
+                },
               ),
               TimePicker(
-                title: AppStrings.checkIn,
-                timeSlots: checkInTimeSlots,
+                title: AppStrings.checkOut,
+                timeSlots: checkoutTimeSlots,
                 selectedTime: context.read<BookingCubit>().checkOutTime,
                 onTimeSelected: (time) {
                   context.read<BookingCubit>().updateCheckOutTime(time);
+                },
+                onIndexSelected: (index){
+                  context.read<BookingCubit>().updateCheckOutIndex(index);
                 },
               ),
               verticalSpace(50.h),

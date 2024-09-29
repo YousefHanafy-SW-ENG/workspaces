@@ -1,8 +1,18 @@
 class AppStrings {
   AppStrings._internal();
   static const String noInternetConnection = 'No internet connection';
-  static const String bookingErrorMsg = 'Please fill the date, check-in and checkout time';
+  static const String bookingErrorMsg = 'Please fill in all fields.';
+  static const String bookingErrorMsg2 = 'Check-in time must be before check-out time.';
   static const String workspaces = 'Workspaces';
+  static const String workspace = 'Workspace';
+  static const String capabilities = 'Capabilities';
+  static const String date = 'Date';
+  static const String time = 'Time';
+  static const String locationConfirmation = 'Location';
+  static const String workspaceDetails = 'Workspace Details :';
+  static const String bookingDetails = 'Booking Details :';
+  static const String bookingConfirmationText = 'Booking Confirmed Successfully';
+  static const String bookingConfirmationDescription = 'Booking confirmed! See you!';
   static const String workspaceOne = 'AlMaqarr Coworking Space';
   static const String cairo = 'Cairo, Egypt';
   static const String fourPeople = '4 People';
@@ -20,6 +30,7 @@ class AppStrings {
   static const String selectDateAndTime = 'Select date and time';
   static const String bookNow = 'Book Now';
   static const String confirmBooking = 'Confirm Booking';
+  static const String exploreMoreWorkSpace = 'Explore more workspaces';
   static const String workspaceDescription = 'Modern workspaces are designed to enhance productivity and collaboration among team members.';
   static const String freeWifiDescription = 'Complimentary Wi-Fi is available to ensure seamless connectivity and collaboration for all users.';
   static const String projectorDescription = 'High-quality projectors are provided to facilitate presentations and enhance visual collaboration in meetings.';

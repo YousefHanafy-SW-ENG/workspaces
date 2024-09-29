@@ -9,4 +9,7 @@ class BookingSuccessState extends BookingStates {}
 
 class BookingUpdatedState extends BookingStates {}
 
-class BookingErrorState extends BookingStates {}
+class BookingErrorState extends BookingStates {
+  final String error;
+  BookingErrorState({required this.error});
+}

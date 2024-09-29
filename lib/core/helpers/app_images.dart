@@ -9,6 +9,7 @@ class AppAssets {
   static const String hardDiskIcon = "$imagesPath/hardIcon.png";
   static const String locationIcon = "$svgPath/location.svg";
   static const String projectorIcon = "$svgPath/projector.svg";
+  static const String confirmationIcon = "$svgPath/confirmation_icon.svg";
   static const String userIcon = "$svgPath/user.svg";
   static const String wifiIcon = "$svgPath/wifi.svg";
 }
