@@ -1,6 +1,7 @@
 class AppStrings {
   AppStrings._internal();
   static const String noInternetConnection = 'No internet connection';
+  static const String bookingErrorMsg = 'Please fill the date, check-in and checkout time';
   static const String workspaces = 'Workspaces';
   static const String workspaceOne = 'AlMaqarr Coworking Space';
   static const String cairo = 'Cairo, Egypt';
@@ -11,6 +12,8 @@ class AppStrings {
   static const String amenities = 'Amenities';
   static const String gallery = 'Gallery';
   static const String review = 'Review';
+  static const String checkIn = 'Check-in :';
+  static const String checkOut = 'Checkout :';
   static const String description = 'Description :';
   static const String location = 'Location :';
   static const String capacity = 'Capacity :';

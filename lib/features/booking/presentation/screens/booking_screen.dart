@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:workspace/core/helpers/app_strings.dart';
 import 'package:workspace/core/helpers/extensions.dart';
-import 'package:workspace/core/routing/routes.dart';
-import 'package:workspace/core/theming/app_colors.dart';
-import 'package:workspace/core/widgets/button_bottom_nav_bar.dart';
+import 'package:workspace/core/helpers/spacer.dart';
 import 'package:workspace/core/widgets/primary_app_bar.dart';
-import 'package:workspace/core/widgets/primary_button.dart';
 import 'package:workspace/core/widgets/primary_padding.dart';
+import 'package:workspace/features/booking/presentation/cubit/booking_cubit.dart';
+import 'package:workspace/features/booking/presentation/widgets/booking_calendar.dart';
+import 'package:workspace/features/booking/presentation/widgets/check_in_time_slots.dart';
+import 'package:workspace/features/booking/presentation/widgets/confirm_booking_button.dart';
+import 'package:workspace/features/booking/presentation/widgets/time_picker.dart';
 
-class BookingScreen extends StatefulWidget {
-  const BookingScreen({super.key});
-
-  @override
-  BookingScreenState createState() => BookingScreenState();
-}
-
-class BookingScreenState extends State<BookingScreen> {
-  DateTime? selectedDate;
-  CalendarFormat calendarFormat = CalendarFormat.month;
+class BookingScreen extends StatelessWidget {
+  final String name;
+  final String location;
+  final String capacity;
+  final List<String> availableAmenities;
+  const BookingScreen({
+    super.key,
+    required this.name,
+    required this.location,
+    required this.capacity,
+    required this.availableAmenities
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,61 +37,37 @@ class BookingScreenState extends State<BookingScreen> {
         ),
       ),
       body: PrimaryPadding(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(child: TableCalendar(
-              firstDay: DateTime.now(),
-              lastDay: DateTime.utc(2025, 12, 31),
-              focusedDay: DateTime.now(),
-              selectedDayPredicate: (day) {
-                return selectedDate == day;
-              },
-              onDaySelected: (selectedDay, focusedDay) {
-                setState(() {
-                  selectedDate = selectedDay;
-                });
-              },
-              calendarFormat: CalendarFormat.month,
-              onFormatChanged: (format) {
-                setState(() {
-                  calendarFormat = format;
-                });
-              },
-              headerStyle: const HeaderStyle(
-                formatButtonVisible: false, // Hide format button
-                titleCentered: true,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const BookingCalendar(),
+              TimePicker(
+                title: AppStrings.checkIn,
+                timeSlots: checkInTimeSlots,
+                selectedTime: context.read<BookingCubit>().checkInTime,
+                onTimeSelected: (time) {
+                  context.read<BookingCubit>().updateCheckInTime(time);
+                },
               ),
-              calendarStyle: CalendarStyle(
-                todayDecoration: const BoxDecoration(),
-                todayTextStyle: TextStyle(
-                  color: Colors.grey.shade400,
-                ),
-                selectedDecoration: const BoxDecoration(
-                  color: AppColors.blueColor,
-                  shape: BoxShape.rectangle,
-                ),
+              TimePicker(
+                title: AppStrings.checkIn,
+                timeSlots: checkInTimeSlots,
+                selectedTime: context.read<BookingCubit>().checkOutTime,
+                onTimeSelected: (time) {
+                  context.read<BookingCubit>().updateCheckOutTime(time);
+                },
               ),
-            )),
-          ],
+              verticalSpace(50.h),
+            ],
+          ),
         ),
       ),
-      bottomNavigationBar: ButtonBottomNavBar(
-        button: PrimaryButton(
-          text: AppStrings.confirmBooking,
-          fillColor: AppColors.greyColor2,
-          borderColor: AppColors.greyColor2,
-          textColor: AppColors.greyColor3,
-          onTap: () {
-            if (selectedDate != null) {
-              context.pushNamed(Routes.bookingDetailsScreen);
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("Please select a date")),
-              );
-            }
-          },
-        ),
+      bottomNavigationBar: ConfirmBookingButton(
+        name: name,
+        location: location,
+        capacity: capacity,
+        availableAmenities: availableAmenities,
       ),
     );
   }
