@@ -65,10 +65,6 @@ The app has been designed and tested to work seamlessly on devices of various si
 ## Unit Testing
 To ensure the reliability of the app, unit tests have been integrated into the project. These tests verify the functionality of core features, including:
 
-You can run the unit tests by using the following command:
-```bash
-flutter test
-
 ## Setup Instructions
 To run the **Workspace Booking App** locally, follow these steps:
 
@@ -81,5 +77,18 @@ Make sure you have the following installed:
 
 1. **Clone the repository**: Open your terminal and run the following commands:
    ```bash
-   git clone https://github.com/yourusername/workspace-booking-app.git
-   cd workspace-booking-app
+   git clone https://github.com/YousefHanafy-SW-ENG/workspaces.git
+   cd workspaces
+   
+2. **Install dependencies**: Install the required dependencies by running:
+   ```bash
+   flutter pub get
+
+3. **Run the app**: Connect a device via USB or start an emulator and Run the app using:
+   ```bash
+   flutter run
+
+4. **Testing the app on different screen sizes**: You can use Android Studio's emulator or multiple physical devices to test how the app behaves on different screen sizes.   
+   
+
+
