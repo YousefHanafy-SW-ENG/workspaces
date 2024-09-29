@@ -8,14 +8,16 @@ class TimePicker extends StatelessWidget {
   final String title;
   final List<String> timeSlots;
   final String selectedTime;
-  final ValueChanged<String> onTimeSelected; // Add a callback
+  final ValueChanged<String> onTimeSelected;
+  final ValueChanged<int> onIndexSelected;
 
   const TimePicker({
     super.key,
     required this.title,
     required this.timeSlots,
     required this.selectedTime,
-    required this.onTimeSelected, // Add this parameter
+    required this.onTimeSelected,
+    required this.onIndexSelected,
   });
 
   @override
@@ -32,6 +34,9 @@ class TimePicker extends StatelessWidget {
             time: selectedTime,
             onTimeSelected: (time) {
               onTimeSelected(time); // Call the callback instead of directly assigning
+            },
+            onIndexSelected: (index){
+              onIndexSelected(index);
             },
           ),
         ],
