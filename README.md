@@ -68,3 +68,18 @@ To ensure the reliability of the app, unit tests have been integrated into the p
 You can run the unit tests by using the following command:
 ```bash
 flutter test
+
+## Setup Instructions
+To run the **Workspace Booking App** locally, follow these steps:
+
+### Prerequisites
+Make sure you have the following installed:
+- **Flutter SDK**: Install the [Flutter SDK](https://flutter.dev/docs/get-started/install) if you don’t have it set up already.
+- **IDE**: Use a Flutter-friendly editor like Visual Studio Code, IntelliJ IDEA, or Android Studio.
+
+### Installation
+
+1. **Clone the repository**: Open your terminal and run the following commands:
+   ```bash
+   git clone https://github.com/yourusername/workspace-booking-app.git
+   cd workspace-booking-app
